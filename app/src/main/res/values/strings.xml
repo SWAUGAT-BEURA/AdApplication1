@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">AdApp</string>
+
+    <string-array name="state_array">
+        <item>Odisha</item>
+        <item>Andhra Pradesh</item>
+        <item>Madhya Pradesh</item>
+        <item>Bihar</item>
+        <item>Gujarat</item>
+        <item>Karnataka</item>
+        <item>Haryana</item>
+        <item>Assam</item>
+    </string-array>
+
 </resources>
