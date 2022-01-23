@@ -2,7 +2,9 @@ package com.sanjeevani.adapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityCompat;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
@@ -98,5 +100,26 @@ public class MainActivity
                 setVideo(videolist.get(currvideo));
             }
         }
+    }
+    @Override
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle("Exit")
+                .setMessage("Do you really want to exit?")
+                .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        ActivityCompat.finishAffinity(MainActivity.this);
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+
     }
 }
